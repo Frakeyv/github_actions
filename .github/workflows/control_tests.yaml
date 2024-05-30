@@ -5,6 +5,8 @@ jobs:
     name: Check tests
     runs-on: ubuntu-20.04
     steps:
+      - name: Remove __pycache__ directories
+        run: find . -type d -name "__pycache__" -exec rm -r {} +
       - name: Checkout on master
         uses: actions/checkout@v3
 
